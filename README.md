@@ -14,16 +14,23 @@ The raw data of evaluation are implemented by this prototype.
 
 ## Critical questions
 Q: When does IoT device start to disconnect?
-    A: According to RSS, IoT device starts to connect to new node, at the same time, it disconnects from old node.
+
+A: According to RSS, IoT device starts to connect to new node, at the same time, it disconnects from old node.
+
 
 Q: How does fog node know when to start  job pre-migration?
-    A: IoT device will send a signal to fog node to inform old fog 	node it will start to migrate, at the same time, old node will send the result to new node (if exists).
+
+A: IoT device will send a signal to fog node to inform old fog 	node it will start to migrate, at the same time, old node will send the result to new node (if exists).
+
 
 Q: How does IoT device do if it starts to cancel migration after sending pre-migration signal?
-    A: IoT device will send a signal to fog node to inform old fog 	node it will cancel migration. Old fog node will stop job pre-migration and clear cache.
+
+A: IoT device will send a signal to fog node to inform old fog 	node it will cancel migration. Old fog node will stop job pre-migration and clear cache.
+
 
 Q: How does new fog node know which result should be sent back to which IoT device?
-    A: Each IoT device has unique MAC address, each communication between IoT device and fog node will carry MAC address.
+
+A: Each IoT device has unique MAC address, each communication between IoT device and fog node will carry MAC address.
 If IoT device connects to new fog node, it will request old tasks (successfully uploaded & not downloaded yet ) to fog node, according to task sequence number. Then fog node will send the results to correct IoT device (if exists).
 
 To conclude, every time IoT devices need to change the status, it will send message to fog node, and fog node respond based on different message.Each fog node needs to communicate with each other to send results or signals.
