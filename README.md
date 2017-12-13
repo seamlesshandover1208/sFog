@@ -9,8 +9,8 @@ Another part is IoT device. We use smartphone HUAWEI P7 Lite (Android 7.1.1) as 
 ![system architecture](https://github.com/seamlesshandover1208/sFog-source-code/blob/master/image/system%20architecture.PNG)
 
 ## What can support
-The prototype can support 18 possible situations and one situation when IoT device move between 3 fog nodes.
-The raw data of evaluation are implemented by this prototype.
+The prototype can support 18 possible situations and one situation when IoT device moves between 3 fog nodes.
+The raw data of evaluation is implemented by this prototype.
 
 ## Critical questions
 <B>Q: When does IoT device start to disconnect?</B>
