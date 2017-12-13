@@ -1,5 +1,5 @@
 # sFog
-Here are the source code of sFog. it includes 2 parts.
+Here are the source code of sFog. It includes 2 parts.
 
 One part is fog node. The platform is QT 5.8 framework, installed in the Ubuntu 16.04.3 LTS. We also use the USB wireless adapter to broadcast the wifi signal. Linux tool "create_ap" is used to create the wifi hotspot.
 
@@ -14,15 +14,19 @@ The raw data of evaluation are implemented by this prototype.
 
 ## Critical questions
 Q: When does IoT device start to disconnect?
-A: According to RSS, IoT device starts to connect to new node, at 	the same time, it disconnects from old node.
+
+A: According to RSS, IoT device starts to connect to new node, at the same time, it disconnects from old node.
 
 Q: How does fog node know when to start  job pre-migration?
+
 A: IoT device will send a signal to fog node to inform old fog 	node it will start to migrate, at the same time, old node will send the result to new node (if exists).
 
 Q: How does IoT device do if it starts to cancel migration after sending pre-migration signal?
+
 A: IoT device will send a signal to fog node to inform old fog 	node it will cancel migration. Old fog node will stop job pre-migration and clear cache.
 
 Q: How does new fog node know which result should be sent back to which IoT device?
+
 A: Each IoT device has unique MAC address, each communication between IoT device and fog node will carry MAC address.
 If IoT device connects to new fog node, it will request old tasks (successfully uploaded & not downloaded yet ) to fog node, according to task sequence number. Then fog node will send the results to correct IoT device (if exists).
 
